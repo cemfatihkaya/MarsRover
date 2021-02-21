@@ -38,3 +38,11 @@ MMRMMRMRRM
 1 3 N
 
 5 1 E
+
+# Installing
+* .NET Core SDK 3.1
+* Visual Studio 2019, Rider or VS Code
+
+# Scope
+* .NET Core 3.1
+
