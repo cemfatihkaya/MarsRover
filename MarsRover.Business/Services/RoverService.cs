@@ -99,6 +99,8 @@ namespace MarsRover.Business.Services
 
         void Move()
         {
+            IsValidPosition();
+
             switch (RoverDirection)
             {
                 case Directions.N:
@@ -119,6 +121,14 @@ namespace MarsRover.Business.Services
 
                 default:
                     throw new ArgumentException(string.Format("Invalid value: {0}", RoverDirection));
+            }
+        }
+
+        void IsValidPosition()
+        {
+            if (RoverPosition.X > RoverPlateau.PlateauPosition.X || RoverPosition.Y > RoverPlateau.PlateauPosition.Y)
+            {
+                throw new IndexOutOfRangeException(string.Format("Invalid position value: {0} {1}", RoverPosition.X, RoverPosition.Y));
             }
         }
 
